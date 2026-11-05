@@ -9,7 +9,7 @@ COPY components/3d-view/ ./
 ENV VITE_BASE=/3d/ VITE_EVENTS_URL=/3d/api/events
 RUN npm run build
 
-FROM docker.io/nginxinc/nginx-unprivileged:1.27-alpine
+FROM docker.io/nginxinc/nginx-unprivileged:1.31-alpine
 USER root
 RUN rm /etc/nginx/conf.d/default.conf
 USER nginx
