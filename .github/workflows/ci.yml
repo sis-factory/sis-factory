@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - run: make test-py
 
   web:
@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - run: make test-3d
       - run: make build-3d
       - run: make test-3d-visual
@@ -54,7 +54,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - run: make lint-charts
 
   security:
@@ -62,7 +62,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0  # gitleaks reads the whole history
       - name: Secrets in the git history (gitleaks)
@@ -107,7 +107,7 @@ jobs:
         component: [3d-view, agent-runner, context-api, context-ingest, embeddings, git-broker, injection-guard, jira-connector,
                     orchestrator-worker, portal-api, portal-web, sandbox-gateway, sandbox-provisioner]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: sigstore/cosign-installer@v3
       - name: Build, scan, push
         id: push
