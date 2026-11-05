@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="docs/images/3d-view.png" alt="The SIS 3D factory floor: tickets flow from the Jira inbox through classifiers, context and locked-down sandboxes to draft pull requests" width="900">
+
 # 🏭 SIS: the 3D Self-Improving Software Factory
 
 ### Enterprise-grade. Self-improving. Watch your software get built in 3D.
