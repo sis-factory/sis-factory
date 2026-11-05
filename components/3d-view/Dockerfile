@@ -1,7 +1,7 @@
 # Production 3D view: the built static files behind nginx, which also forwards the event stream to portal-api. No Vite dev server, no
 # source, no node_modules. Served under /3d/ so auth-proxy can put it behind the same sign-in as the dashboard (compose profile "sso").
 # Build context is the repo root (vite reads the public settings from .env): podman build -f components/3d-view/Dockerfile .
-FROM docker.io/library/node:22-alpine AS build
+FROM docker.io/library/node:26-alpine AS build
 WORKDIR /work/components/3d-view
 COPY components/3d-view/package.json components/3d-view/package-lock.json ./
 RUN npm ci --no-audit --no-fund
